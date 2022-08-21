@@ -1,3 +1,7 @@
+/* $desktop:1200px;-xl
+$laptop:992px;-lg
+$tablet:768;-md
+$phone:480;-sm */
 /* POPPINS FONT FAMILY */
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
@@ -11,27 +15,22 @@
 }
 body{
 background-color: #F5F5F5;
-position: relative;
 }
 header{
   background-color: blue;
   color: #fff;
-  height: 47vh;
-  /* top:5% */
+  height: 47%;
 }
 nav{
   display: flex;
- position: absolute;
+ float: right;
  width: 360px;
- right:3%;
  justify-content: space-between;
  align-items: center;
  margin-top: 8px;
  font-size: 12px;
 }
-header>div:first-child{
-  border: 40px solid black;
-}
+
 .nav-item-active{
   background-color: #fff;
   color: #0000ff;
@@ -42,6 +41,27 @@ header>div:first-child{
 .logo{
   margin: 20px 0 0 25px;
   height:30px;
+}
+@media screen and (max-width:480px) {
+  .logo{
+    margin: 20px 0 0 40%;
+    width: 80px;
+  }
+  nav{
+    float: none ;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0 !important;
+    width: 100%;
+  }
+  nav *{
+    margin-right: 0;
+  }
+  header{
+    padding-top:10px ;
+  }
 }
 .header-image{
   height: 50vh;
@@ -62,8 +82,47 @@ header>div:last-child{
 .header-text>img{
   height: 3.5px;
 }
+@media screen and (max-width:768px) {
+  .header-image{
+    height: 40vh;
+  }
+  .header-text{
+    font-size: 10px;
+  }
+  nav{
+    font-size: 10px;
+  }
+  nav{
+    width: 320px;;
+  }
+}
+@media screen and (max-width:480px) {
+  header>div:last-child{
+    position: static;
+    width: 100%;
+    display: flex;
+    justify-content: center
+  }
+  .header-image{
+    float: ;
+    width: 250px;
+    height: 250px;
+    margin-right: 10px;
+  }
+  header{
+    height: 600px;
+  }
+  .header-text{
+    text-align: center;
+    margin: 25px 0 0 0;
+  }
+  nav{
+    width: 100%;
+  }
+}
+/* ==================== */
 .companies{
-  margin: 10px 0 0 3vw;
+  margin: 10px 0 0 3%;
 }
 .companies *{
   font-family: 'Righteous';
@@ -71,6 +130,22 @@ header>div:last-child{
   font-size: 15px;
   color:#000;
 }
+/* Media query below tablet */
+@media screen and (max-width:768px) {
+  .companies *{
+    font-size: 13px;
+  }
+}
+  @media screen and (max-width:480px) {
+    .companies {
+      margin: 20px 0 0 0;
+      display: flex;
+      justify-content: center;
+      text-align: center  ;
+    }
+  
+}
+/* =================CARDS============== */
 .api{
   margin-left: 3vw;
   margin-top:75px;
@@ -79,7 +154,7 @@ header>div:last-child{
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
-  width: 88vw;
+  flex-wrap: wrap;
 }
 .card-logo{
   height: 35px;
@@ -89,7 +164,7 @@ header>div:last-child{
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  width: 14.5vw;
+  width: 155px;
   height: 20vh;
   padding: 1rem 1.2rem;
   font-size: 12px;
@@ -104,45 +179,61 @@ header>div:last-child{
 }
 .cards{
   align-content: space-around;
-  /* margin-bottom: 12px; */
 }
 .api-heading{
   font-size:20px !important;
 }
+@media screen and (max-width:480px) {
+  .cards{
+    justify-content: center;
+  }
+  .api-heading{
+    text-align: center ;
+  }
+  .api{
+    margin-top: 30px;
+  }
+}
+
+/* =========================== */
 .blog-heading{
-  margin: 50px 0 0 3vw;
+  margin: 50px 0 0 11%;
   font-size: 11px;
 }
 .blog-cards{
   display: flex;
-  margin: 30px 0 0 3vw;
-  justify-content: space-between;
-  width: 80.5vw;
-  height: 29vh;
-  position: relative;
+  margin: 30px 0 50px 3vw;
+  justify-content: space-evenly;
+  gap:20px;
+  flex-wrap: wrap;
+  height: 29%;
   font-size: 13px;
 }
+.blog-image{
+  height: 100%;
+}
 .blog-image img{
-  height: 29vh;
-  order: -1;
+  height: 100%;
 }
 .blog-card{
-  width: 39vw;
+  height: 200px;
+  width: 550px;
   display: flex;
   justify-content: space-between;
-  flex-wrap:wrap;
   background-color: #fff;
   border-radius: 8px;
   border-top-left-radius: 38px;
   box-shadow: 1px 3px 10px 2px rgb(162, 162, 162);
-  overflow:hidden;
+}
+.blog-right{
+  display: flex;
+  gap:100px;
+  justify-content: space-between;
 }
 .blog-author{
-  order:1;
-  /* margin-left: 10px; */
   font-size: 8px;
   position: relative;
-  top:8px;
+  top:8px;  
   left:20px;
 }
 .blog-bottom{
@@ -153,79 +244,148 @@ header>div:last-child{
 }
 .blog-bottom img{
   height: 35px;
-  /* flex: 2; */
+  flex: 2;
 }
 .blog-content{
   order: 4;
   flex-grow: 1;
   margin-left: 20%;
-  margin-bottom: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
+@media screen and (max-width:768px) {
+  .blog-bottom{
+    display: none;
+  }
+  .blog-author{
+    display: none;
+  }
+}
+@media screen and (max-width:480px) {
+  .blog-cards{
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    margin-left: 0;
+  }
+  .blog-card{
+    flex-direction: column;
+    align-items: center;
+    height: 500px;
+    width: 200px;
+    border-top-left-radius: 40px;
+    margin: 0;
+
+  }
+  .blog-image{
+    width: 100%;
+    height: 230px;  
+  }
+  .blog-content{
+    text-align: center;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  .blog-heading{
+    margin: 0;
+    margin-top: 20px;
+    text-align: center;
+  }
+}
+/* ======================= */
+
 .faq-section{
    width: 100%;
-   /* border:2px solid; */
    display: flex;
    justify-content: space-between;
-   margin-top: 5vh;
-   height: 32vh;
+   /* flex-wrap: wrap; */
+   height: 250px;
+   margin-top: 5%;
    background-color: #e9edff;
   }
-  .faq-image{
-    height: 35vh;
-    border:none;
-    margin-right: 12vw;
-  }
-  .faq-image img{
+  .faq-section img{
+    height: inherit;
     border: none;
-    height: 32vh;
+    width: 32%;
+    margin-right: 10%;
 }
 .faq-content{
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  width: 35vw;
+  gap:10px;
+  width: 35%;
   font-size: 12px;
-  margin-left: 3vw;
+  margin-left: 3%;
 }
 .faq-content button{
-  width: 18%;
+  width: 70px;
   font-size: 10px;
   color: #fff;
   background-color: #5a31fc;
   border: none;
-  padding: 3px 0;
+  padding: 3px 1px;
+  margin-bottom: 10px;
 }
+/* Media query below tablet */
+@media screen and (max-width:768px) {
+  .faq-section img{
+    margin-right: 0px;
+  }
+ 
+}
+@media screen and (max-width:480px) {
+  .faq-section{
+    flex-direction: column;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    gap:10px
+  }
+  .faq-section img{
+    width: 100%;
+  }
+  .faq-content{
+    width: 100%;
+    margin: 0;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+}
+/* ============================ */
 .download-section{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
   height: 15vh;
-  margin-left: 3vw;
+  padding-left: 3%;
 }
 .download-content span{
   font-size: 23px;
 }
 .download-email{
-  margin-right: 10vw;
+  display: flex;
   background-color: #e9edff;
+  align-items: center;
   border: 1px solid;
-  width:25vw;
+  width:275px;
   border-radius: 20px;
   padding: 2px 2px;
 }
 .download-email form{
   display:flex;
   justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
 }
 .download-email input{
   background-color: #e9edff;
   border: none;
-  margin-left: 90px;
+  margin-left: 10%;
 }
 .download-email input::placeholder{
   font-size: 9px;
@@ -239,6 +399,26 @@ header>div:last-child{
   padding: 5px 20px;
   border-radius: 20px;
 }
+@media screen and (max-width:480px) {
+ .download-section{
+  justify-content: center;
+ } 
+ .download-section *{
+  margin: 0;
+ }
+}
+@media screen and (max-width:480px) {
+  .download-email *{
+    transform: scale(0.85);
+    margin: 0;
+  }
+  .download-email {
+    width: 248px;
+    height: 19px;
+    align-items: center;
+  }
+}
+/* ====================== */
 .footer-section{
   background-color: blue;
   width: 100%;
@@ -255,7 +435,7 @@ header>div:last-child{
   margin-top: 8px;
 }
 .footer-left{
-  margin-left: 3vw;
+  margin-left: 3%;
   margin-top: 25px;
   width: 16vw;
 }
@@ -279,4 +459,24 @@ div.footer-right>div{
 .footer-logos{
   height: 20px;
 
+}
+@media screen and (max-width:768px) {
+  .footer-section ul{
+  margin-left: 10px;
+  }
+ 
+}
+@media screen and (max-width:480px) {
+  .footer-section{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .footer-left{
+    margin-left: 0;
+  }
+  div.footer-right{
+    margin-right: 0;
+  }
 }
